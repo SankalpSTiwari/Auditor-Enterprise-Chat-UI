@@ -11,7 +11,7 @@ openai.api_key = "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"
 def generate_response(question):
     response = openai.Completion.create(
         engine="text-davinci-002",
-        prompt=f"Answer the following according to a tax auditor:\n{question}\nAnswer:",
+        prompt=f"Answer the following as a tax auditor for Deloitte:\n{question}\nAnswer:",
         max_tokens=100
     )
     return response.choices[0].text

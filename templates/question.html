@@ -20,7 +20,7 @@
             width: 100%;
             height: 25px;
             font-size: large;
-
+            font-family: "Calibri", sans-serif;
         }
 
         .divinputbuttons {
@@ -48,9 +48,6 @@
         }
 
         .buttonSend img {
-            /* left: 50%;
-    margin-left: -15px;
-    top: 50%;*/
             height: 22px;
             width: 22px;
             margin-left: -8px;
@@ -63,7 +60,7 @@
         }
 
         .buttonCancel {
-            background-color: rgb(84, 6, 73);
+            background-color: rgb(110, 15, 97);
             color: white;
             min-width: 30%;
             border-radius: 8px;
@@ -83,7 +80,7 @@
         ::placeholder {
             color: rgb(64, 69, 168);
             opacity: 1;
-            /* Firefox */
+            font-family: "Calibri", sans-serif;
         }
 
         .divoutput {
@@ -99,6 +96,11 @@
             border: 2px solid;
         }
 
+        ::placeholder {
+            color: rgb(64, 69, 168);
+            font-family: "Calibri", sans-serif;
+        }
+
         .divend {
             height: 20px;
             width: 99%;
@@ -112,7 +114,7 @@
     <div class="centerMainDiv">
         <div class="divHeading">
             <a style="color:white;">Deloitte Auditor Enterprise Chat UI</a>
-            <a style="margin-left: 240px; font-weight:bolder ;color: rgb(178, 174, 174);">Deloitte</a>
+            <a style="margin-left: 210px; font-weight:bolder ;color: rgb(178, 174, 174);">Deloitte</a>
             <a style="color:white;">.</a>
         </div>
         <div class="divinput">
@@ -125,7 +127,7 @@
         <div class="divinputbuttons">
             <div class="button-container">
                 <button class="buttonSend" id="submit-button">
-                    <img src="/static/img/chatgpt.png" style="padding-top: 5px;"/>
+                    <img src="/static/img/chatgpt.png" style="padding-top: 5px;" />
                     <a>Send</a>
                 </button>
                 <button onclick="cancelQuestion()" class="buttonCancel">Cancel</button>
