@@ -29,7 +29,7 @@
   padding-top: 15px;
   padding-bottom: 15px;
   gap: 10px;
-  
+  justify-content: center;
 }
 
 .buttonSend{
@@ -37,7 +37,8 @@
   color:white;
   min-width: 30%;
   border-radius: 8px;
-
+  display: flex;
+  justify-content: center;
 }
 
 .buttonSend img {  

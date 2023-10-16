@@ -31,11 +31,10 @@
 
         .button-container {
             display: flex;
-            margin-left: 90px;
             padding-top: 15px;
             padding-bottom: 15px;
             gap: 10px;
-
+            justify-content: center;
         }
 
         .buttonSend {
@@ -43,7 +42,9 @@
             color: white;
             min-width: 30%;
             border-radius: 8px;
-
+            display: flex;
+            align-items: center;
+            padding-left: 55px;
         }
 
         .buttonSend img {
@@ -55,6 +56,10 @@
             margin-left: -8px;
             margin-top: -3px;
             position: relative;
+        }
+
+        .buttonSend a {
+            margin-left: 5px;
         }
 
         .buttonCancel {
@@ -107,7 +112,7 @@
     <div class="centerMainDiv">
         <div class="divHeading">
             <a style="color:white;">Deloitte Auditor Enterprise Chat UI</a>
-            <a style="margin-left: 20px; font-weight:bolder ;color: rgb(178, 174, 174);">Deloitte</a>
+            <a style="margin-left: 240px; font-weight:bolder ;color: rgb(178, 174, 174);">Deloitte</a>
             <a style="color:white;">.</a>
         </div>
         <div class="divinput">
@@ -121,7 +126,7 @@
             <div class="button-container">
                 <button class="buttonSend" id="submit-button">
                     <img src="/static/img/chatgpt.png" style="padding-top: 5px;"/>
-                    Send
+                    <a>Send</a>
                 </button>
                 <button onclick="cancelQuestion()" class="buttonCancel">Cancel</button>
             </div>
