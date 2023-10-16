@@ -33,7 +33,7 @@
 }
 
 .buttonSend{
-  background-color: rgb(14, 14, 96);
+  background-color: rgb(17, 17, 90);
   color:white;
   min-width: 30%;
   border-radius: 8px;
@@ -52,7 +52,7 @@
   position:relative;
 } 
 .buttonCancel{
-  background-color: rgb(84, 6, 73);
+  background-color: rgb(104, 0, 90);
   color:white;
   min-width: 30%;
   border-radius: 8px;
