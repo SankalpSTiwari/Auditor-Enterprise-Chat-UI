@@ -5,7 +5,7 @@ import sqlite3
 app = Flask(__name__)
 
 # OpenAI API key
-openai.api_key = "API KEY"
+openai.api_key = "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"
 
 # Function to generate a response using the GPT model
 def generate_response(question):

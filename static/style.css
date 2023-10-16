@@ -1,0 +1,88 @@
+
+
+.centerMaindiv {
+  border: 0px solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.divHeading{
+  border: 2px solid;
+ background-color: rgb(8, 8, 180); 
+ width: 416px; 
+ height: 25px;
+ font-size: large;
+    
+}
+
+.divinputbuttons{
+  height: 50px;
+  width: 99%;
+  border: 2px solid;
+}
+
+.button-container {
+  display: flex;
+  margin-left: 90px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  gap: 10px;
+  
+}
+
+.buttonSend{
+  background-color: rgb(14, 14, 96);
+  color:white;
+  min-width: 30%;
+  border-radius: 8px;
+
+}
+
+.buttonSend img {  
+  /* left: 50%;
+  margin-left: -15px;
+  top: 50%;*/
+  height:22px;
+  width:22px;
+  margin-left: -8px;
+  margin-top: -3px; 
+  position:relative;
+} 
+.buttonCancel{
+  background-color: rgb(84, 6, 73);
+  color:white;
+  min-width: 30%;
+  border-radius: 8px;
+}
+
+.divinput{
+  height: 75px;
+  width: 99.55%;
+}
+.textareainput{
+  height: 75px;
+  width: 98.4%;
+  border: 2px solid;
+}
+::placeholder {
+  color: rgb(64, 69, 168);
+  opacity: 1; /* Firefox */
+}
+.divoutput{
+  height: 75px;
+  width: 99.55%;
+}
+.textareaoutput{
+  min-height: 75px;
+  width: 98.4%;
+  margin-top: -3px;
+  background-color: rgb(192, 188, 190);
+  border: 2px solid;
+}
+.divend{
+  height: 20px;
+  width: 99%;
+  border: 2px solid;
+}
