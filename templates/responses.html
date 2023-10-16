@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tax Responses</title>
+</head>
+<body>
+    <h1>Tax Responses</h1>
+    <ul>
+        {% for response in responses %}
+            <li>
+                <strong>Question:</strong> {{ response[1] }}<br>
+                <strong>Response:</strong> {{ response[2] }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

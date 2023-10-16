@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tax Questions</title>
+</head>
+<body>
+    <h1>Tax Questions</h1>
+    <form id="question-form">
+        <label for="question">Ask a tax-related question:</label>
+        <textarea name="question" id="question" rows="4" cols="50"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="response">
+        {% if response %}
+            <h2>Response:</h2>
+            <p>{{ response }}</p>
+        {% endif %}
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#question-form").submit(function (event) {
+                event.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "/ajax_response",
+                    data: { question: $("#question").val() },
+                    success: function (data) {
+                        $("#response").html(data.response);
+                    }
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>
