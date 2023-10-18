@@ -42,6 +42,11 @@ def responses():
     responses = get_all_responses()
     return render_template('responses.html', responses=responses)
 
+@app.route('/last_request_response', methods=['GET'])
+def last_request_response():
+    last_entry = get_last_entry()
+    return jsonify({'last_request': last_entry[0], 'last_response': last_entry[1]})
+
 @app.route('/ajax_response', methods=['POST'])
 def ajax_response():
     question = request.form['question']
@@ -63,6 +68,14 @@ def get_all_responses():
     responses = cursor.fetchall()
     conn.close()
     return responses
+
+def get_last_entry():
+    conn = sqlite3.connect('tax_responses.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT prompt, response FROM responses ORDER BY id DESC LIMIT 1")
+    last_entry = cursor.fetchone()
+    conn.close()
+    return last_entry
 
 # Start your Flask application here
 if __name__ == '__main__':
