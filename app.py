@@ -36,11 +36,11 @@ create_database()
 def index():
     return render_template('question.html')
 
-
 @app.route('/responses')
 def responses():
     responses = get_all_responses()
-    return render_template('responses.html', responses=responses)
+    last_entry = get_last_entry()
+    return render_template('responses.html', responses=responses, last_request=last_entry[0], last_response=last_entry[1])
 
 @app.route('/last_request_response', methods=['GET'])
 def last_request_response():

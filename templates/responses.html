@@ -2,9 +2,36 @@
 <html>
 <head>
     <title>Tax Responses</title>
+    <style>
+        /* Define the CSS class for tabspace */
+        .tabspace {
+            margin-left: 20px; /* Adjust the value as needed for your desired indentation */
+        }
+    </style>
 </head>
 <body>
     <h1>Tax Responses</h1>
+    
+    <div id="lastRequestResponse">
+        <h2>Last Request and Response:</h2>
+        <p class="tabspace"><strong>Last Request:</strong> <span id="lastRequest"></span></p>
+        <p class="tabspace"><strong>Last Response:</strong> <span id="lastResponse"></span></p>
+    </div>
+
+    <!-- Add the jQuery code here -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Fetch and display the last request and response
+            $.get('/last_request_response', function(data) {
+                $('#lastRequest').text(data.last_request);
+                $('#lastResponse').text(data.last_response);
+            });
+        });
+    </script>
+
+<h2>All Requests and Responses:</h2>
+
     <ul>
         {% for response in responses %}
             <li>
