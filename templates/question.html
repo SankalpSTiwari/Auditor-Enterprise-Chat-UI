@@ -138,6 +138,13 @@
         <div class="divoutput">
             <textarea class="textareaoutput" id="response-textarea" readonly placeholder="Response"></textarea>
         </div>
+        <div class="divinputbuttons">
+            <div class="button-container">
+                <button class="buttonSave" id="save-button">
+                    Save
+                </button>
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -153,6 +160,41 @@
                         $("#response-textarea").val(data.response);
                     }
                 });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#save-button").click(function (event) {
+                // Run the submit query
+                $.ajax({
+                    type: "POST",
+                    url: "/ajax_response",
+                    data: { question: $("#question").val() },
+                    success: function (data) {
+                        $("#response-textarea").val(data.response);
+                    }
+                });
+                // Save the response
+      $.ajax({
+        type: "POST",
+        url: "/save_response",
+        data: { question: $("#question").val(), response: $("#response-textarea").val() },
+        success: function (data) {
+          // Do nothing
+        }
+      });
+
+      // Get the most recent query and response
+      $.ajax({
+        type: "GET",
+        url: "/last_request_response",
+        success: function (data) {
+          // Redirect to the responses page and display the most recent query and response
+          window.location.href = "/responses?last_request=" + data.last_request + "&last_response=" + data.last_response;
+        }
+      });
+                window.location.href = "/responses";
             });
         });
     </script>
